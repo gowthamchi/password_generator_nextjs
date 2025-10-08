@@ -3,6 +3,7 @@ const bcrypt = require("bcrypt");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const crypto = require("crypto");
+require("dotenv").config();
 
 const app = express();
 app.use(express.json());
@@ -17,9 +18,7 @@ app.use(
   })
 );
 
-// MongoDB Connection
-const uri =
-  "mongodb+srv://Gowtham_Reddy:Gowtham2004@cluster0.q5mzsyh.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const uri = process.env.MONGO_URI;
 mongoose
   .connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log("MongoDB Atlas Connected"))
@@ -27,7 +26,7 @@ mongoose
 
 // AES-256-CBC Encryption
 const ALGORITHM = "aes-256-cbc";
-const KEY = crypto.createHash("sha256").update("your-very-secret-key").digest(); 
+const KEY = crypto.createHash("sha256").update(process.env.ENCRYPTION_KEY).digest(); 
 const IV = Buffer.alloc(16, 0); 
 
 
