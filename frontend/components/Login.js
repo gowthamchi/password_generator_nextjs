@@ -6,6 +6,7 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const router = useRouter();
+	const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 
   function afterSubmit(e) {
     e.preventDefault();

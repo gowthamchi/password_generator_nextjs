@@ -17,7 +17,7 @@ function MainPassword() {
   const letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
   const numbers = "0123456789";
   const symbols = "!@#$%^&*()_+-=[]{}|;:,.<>?";
-
+  const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
   useEffect(() => {
     const isLoggedIn = localStorage.getItem("isLoggedIn");
     if (!isLoggedIn) {

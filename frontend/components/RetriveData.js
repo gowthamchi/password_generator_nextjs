@@ -8,7 +8,7 @@ function RetrieveData() {
   const [vaultData, setVaultData] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredData, setFilteredData] = useState([]);
-
+  const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
   useEffect(() => {
     const isLoggedIn = localStorage.getItem("isLoggedIn");
     const email = localStorage.getItem("email");
