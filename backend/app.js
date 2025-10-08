@@ -12,7 +12,7 @@ const port = 5000;
 
 app.use(
   cors({
-    origin: "https://password-generator-nextjs-p57e.onrender.com/",
+    origin: "https://password-generator-nextjs-p57e.onrender.com",
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
