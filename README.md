@@ -6,7 +6,7 @@ Generate strong passwords, save them securely, and manage them (search, edit, de
 ---
 
 ## 🔗 Live Demo
-[Live Demo URL](YOUR_LIVE_DEMO_URL_HERE)
+[Live Demo URL](https://password-generator-nextjs-p57e.onrender.com/)
 
 ## 📂 Repository
 [GitHub Repo](YOUR_REPO_LINK_HERE)
