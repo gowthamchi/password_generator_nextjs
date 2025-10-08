@@ -11,7 +11,7 @@ export default function SignUp() {
     e.preventDefault();
     const userData = { email, password };
 
-    fetch("http://localhost:5000/api/signin", {
+    fetch(`${API_BASE_URL}/api/signin`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(userData),

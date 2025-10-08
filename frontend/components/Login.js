@@ -11,7 +11,7 @@ export default function Login() {
     e.preventDefault();
     const userData = { email, password };
 
-    fetch("http://localhost:5000/api/login", {
+    fetch(`${API_BASE_URL}/api/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(userData),

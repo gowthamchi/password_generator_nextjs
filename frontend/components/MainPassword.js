@@ -58,7 +58,7 @@ function MainPassword() {
     e.preventDefault();
     const userData = { email, url, password, websitename };
 
-    fetch("http://localhost:5000/api/mainpassword", {
+    fetch(`${API_BASE_URL}/api/mainpassword`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(userData),

@@ -23,7 +23,7 @@ function RetrieveData() {
   }, [router]);
 
   const fetchPasswords = (email) => {
-    fetch("http://localhost:5000/api/allpasswords", {
+    fetch(`${API_BASE_URL}/api/allpasswords`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email }),
@@ -39,7 +39,7 @@ function RetrieveData() {
   const handleDelete = (id) => {
     if (!window.confirm("Are you sure you want to delete this entry?")) return;
 
-    fetch("http://localhost:5000/api/deletepassword/" + id, { method: "DELETE" })
+    fetch(`${API_BASE_URL}/api/deletepassword/` + id, { method: "DELETE" })
       .then((res) => res.json())
       .then(() => {
         const updatedData = vaultData.filter((item) => item._id !== id);
@@ -53,7 +53,7 @@ function RetrieveData() {
     const newPassword = window.prompt("Enter new password:");
     if (!newPassword) return;
 
-    fetch("http://localhost:5000/api/updatepassword/" + id, {
+    fetch(`${API_BASE_URL}/api/updatepassword/`+ id, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ password: newPassword }),
