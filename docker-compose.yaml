@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  mongo:
+    container_name: mongo_cont
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    restart: always
+
+  backend:
+    container_name: backend_cont
+    build:
+      context: ./backend
+    ports:
+      - "5000:5000"
+    restart: always
+    depends_on:
+      - mongo
+    env_file:
+      - ./backend/.env
+
+  frontend:
+    container_name: frontend_cont
+    build:
+      context: ./frontend
+    ports:
+      - "3000:3000"
+    restart: always
+    depends_on:
+      - backend
+    env_file:
+      - ./frontend/.env
+
+
+
