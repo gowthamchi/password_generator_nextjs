@@ -12,6 +12,7 @@ services:
     container_name: backend_cont
     build:
       context: ./backend
+      image: gowtham1198/password_generator_backend:latest
     ports:
       - "5000:5000"
     restart: always
@@ -24,6 +25,7 @@ services:
     container_name: frontend_cont
     build:
       context: ./frontend
+      image: gowtham1198/password_generator_frontend:latest
     ports:
       - "3000:3000"
     restart: always
