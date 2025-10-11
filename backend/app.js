@@ -12,7 +12,7 @@ const port = 5000;
 
 app.use(
   cors({
-    origin: "https://password-generator-nextjs-p57e.onrender.com",
+	  origin: "https://3.106.247.106:3000",
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
@@ -24,7 +24,7 @@ mongoose
   .then(() => console.log("MongoDB Atlas Connected"))
   .catch((err) => console.log("Connection lost", err));
 
-// AES-256-CBC Encryption
+
 const ALGORITHM = "aes-256-cbc";
 const KEY = crypto.createHash("sha256").update(process.env.ENCRYPTION_KEY).digest(); 
 const IV = Buffer.alloc(16, 0); 
